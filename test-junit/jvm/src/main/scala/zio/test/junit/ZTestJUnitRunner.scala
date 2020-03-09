@@ -28,6 +28,7 @@ class ZTestJUnitRunner(klass: Class[_]) extends Runner with Filterable with Boot
 
   private lazy val spec: AbstractRunnableSpec = {
     klass
+      .getConstructor()
       .newInstance()
       .asInstanceOf[AbstractRunnableSpec]
   }
